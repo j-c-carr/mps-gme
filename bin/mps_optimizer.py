@@ -46,7 +46,7 @@ class MPSOptimizer():
         logger.debug(f"Target:\n {target}")
 
         if mps0 is None:
-            mps0 = qtn.MPS_rand_state(N, bond_dim)
+            mps0 = qtn.MPS_rand_state(N, bond_dim, phys_dim=target.phys_dim())
             # qtn.tensor_core.TensorNetwork.from_TN(qtn.MatrixProductState, target, bond_dim=bond_dim, dtype=np.float64)
             logger.debug(f"mps0:\n {mps0}")
 
